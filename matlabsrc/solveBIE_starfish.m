@@ -122,7 +122,7 @@ drawbox = @(x,y) plot([x(1) x(2) x(2) x(1) x(1)],[y(1) y(1) y(2) y(2) y(1)],'-k'
 tplot = linspace(0,2*pi,1000);
 
 for i=1:2
-    sfigure(i);
+    figure(i);
     clf
     publication_fig
     pcolor(real(dom.zplot),imag(dom.zplot),log10(error{i}))
@@ -146,7 +146,7 @@ for i=1:2
     box on
 end
 
-sfigure(3);
+figure(3);
 clf
 publication_fig
 pcolor(real(dom.zplot),imag(dom.zplot),log10(error{2}))
@@ -170,7 +170,7 @@ box on
 
 titstr = {'Level curves, normal quad.' 'Level curves, special quad.'};
 for i=4:5
-    sfigure(i);
+    figure(i);
     clf;
     publication_fig
     plot(real(dom.tau(tplot)), imag(dom.tau(tplot)),'k')
@@ -190,7 +190,7 @@ for i=4:5
 end
 
 for i=6:6
-    sfigure(i);
+    figure(i);
     clf
     publication_fig
     plot(real(dom.tau(tplot)), imag(dom.tau(tplot)),'k')
@@ -214,16 +214,16 @@ end
 % Save plots if wanting to
 if savePlots
     % disp('Save plots')
-    sfigure(1)
+    figure(1)
     print -dpng -r400 '../graphics/starfish_error_normq'
     %crop('../graphics/starfish_error_normq');
-    sfigure(2)
+    figure(2)
     print -dpng -r400 '../graphics/starfish_error_interpq'
     %crop('../graphics/starfish_error_interpq');
-    sfigure(3)
+    figure(3)
     print -dpng -r400 '../graphics/starfish_contour_normq'
     %crop('../graphics/starfish_contour_normq');
-    sfigure(4)
+    figure(4)
     print -dpng -r400 '../graphics/starfish_contour_interpq'
     %crop('../graphics/starfish_contour_interpq');
     
